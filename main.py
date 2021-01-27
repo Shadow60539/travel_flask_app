@@ -9,6 +9,10 @@ collection = db['Places']
 app = Flask(__name__)
 
 
+def check():
+    print(list(collection.find({})))
+
+
 @app.route('/getAllPlaces')
 def home():
     return jsonify(list(collection.find({})))
